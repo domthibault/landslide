@@ -51,3 +51,7 @@ Lato est la police du site, incluse dans `assets/fonts/lato-regular.ttf` (400) e
 ## Photo du trio
 
 `assets/images/landslide-trio.jpg` est une copie optimisée de la photo fournie (2400 × 1600 pixels). Elle apparaît en ouverture, sur toute la largeur. Le cadre CSS au ratio 15:8 masque les 20 % supérieurs de la photo 3:2 avec `object-position: center bottom`; le fichier original reste intact. LANDSLIDE se superpose en bas à droite. Le site utilise uniquement cette copie du dépôt, sans dépendance au chemin du fichier original. Pour remplacer la photo, mettre à jour son chemin, ses dimensions et son texte alternatif dans `index.html`.
+
+### Erreur YouTube 153
+
+Ne pas tester les vidéos en ouvrant directement `index.html` en `file://`. YouTube exige un en-tête HTTP Referer : utiliser le serveur local ci-dessus ou le site GitHub Pages. Conserver `referrerpolicy="strict-origin-when-cross-origin"` sur les iframes. Si l’erreur persiste en HTTP, vérifier dans Network le Referer de la requête embed et les protections du navigateur.
