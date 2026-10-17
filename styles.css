@@ -71,3 +71,5 @@ footer > a:last-child { font-size: .8rem; }
 }
 
 .member .video-excerpt + .video-excerpt { margin-top: 1.5rem; }
+
+.featured-videos + .section-intro { margin-top: 2rem; margin-bottom: 0; }
