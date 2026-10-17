@@ -55,3 +55,13 @@ Lato est la police du site, incluse dans `assets/fonts/lato-regular.ttf` (400) e
 ### Erreur YouTube 153
 
 Ne pas tester les vidéos en ouvrant directement `index.html` en `file://`. YouTube exige un en-tête HTTP Referer : utiliser le serveur local ci-dessus ou le site GitHub Pages. Conserver `referrerpolicy="strict-origin-when-cross-origin"` sur les iframes. Si l’erreur persiste en HTTP, vérifier dans Network le Referer de la requête embed et les protections du navigateur.
+
+## Animation du titre
+
+`title-animation.js` déplace les mêmes lettres entre cinq anagrammes. Playful Data reste affiché 7 secondes, chaque variante 3,5 secondes; Trois modes sont conservés : groupes de trois (0), lettres individuelles (1) et défilement rapide des caractères sur place (2, toutes les 50 ms). Seul le mode 2 est actif; modifier `activeModes` dans `title-animation.js` pour changer la sélection. Pour les déplacements, avec des départs décalés et de petites trajectoires courbes (700 à 850 ms, plus les délais). Modifier `phrases` et les durées dans ce fichier. Un onglet masqué suspend le minuteur; le survol ne le suspend pas. Le premier minuteur démarre à l’initialisation du script, sans attendre les polices ni les vidéos. Avec la préférence de réduction des animations, le titre reste fixe. Sans JavaScript, le titre HTML reste visible. Vérifier manuellement les mouvements, le cadrage mobile et la lecture des vidéos.
+
+Le titre animé utilise Archivo Black, hébergée dans `assets/fonts/archivo-black.ttf` avec sa licence `archivo-black-OFL.txt`. Le reste du site conserve Lato. La taille et le rose du titre se règlent dans `.featured h1`; la mesure centrée des lettres se règle dans `.title-ruler`.
+
+Le mode de défilement alterne gauche → droite, droite → gauche, centre → bords et bords → centre. Chaque caractère défile pendant 400 ms, avec un décalage de 45 ms selon sa position dans la vague.
+
+Le nom LANDSLIDE superposé à la photo utilise Raleway, hébergée dans `assets/fonts/raleway-variable.ttf` avec la licence `raleway-OFL.txt`. Playful Data conserve Archivo Black.

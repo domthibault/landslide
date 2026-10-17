@@ -1,4 +1,18 @@
 @font-face {
+  font-family: 'Raleway';
+  src: url('./assets/fonts/raleway-variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Archivo Black';
+  src: url('./assets/fonts/archivo-black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
   font-family: 'Lato';
   src: url('./assets/fonts/lato-regular.ttf') format('truetype');
   font-style: normal;
@@ -25,7 +39,15 @@ main, footer { max-width: 1440px; margin: auto; padding-inline: clamp(1.25rem, 5
 h1, h2, h3, p { margin-top: 0; }
 .section { padding-block: clamp(3rem, 6vw, 6rem); }
 .featured { padding-top: clamp(1.25rem, 2.5vw, 2.5rem); }
-.featured h1 { margin-top: 0; }
+.featured h1 {
+  margin-top: 0;
+  text-align: center;
+  font-family: 'Archivo Black', 'Arial Black', sans-serif;
+  font-size: clamp(2rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  color: #f5a9bc;
+}
 .eyebrow { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
 h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; font-weight: 400; letter-spacing: -.035em; margin-block: 1.5rem; }
 .section-intro { color: var(--muted); max-width: 42rem; margin-bottom: 2.5rem; }
@@ -59,17 +81,28 @@ footer > a:last-child { font-size: .8rem; }
 }
 
 .portrait-wordmark {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: .12em;
   position: absolute;
   z-index: 1;
   bottom: clamp(.4rem, 1vw, 1rem);
   right: clamp(1rem, 4vw, 4rem);
   padding: .15em .35em;
-  font-size: clamp(2rem, 6.5vw, 6.5rem);
+  font-size: clamp(1.5rem, 4.5vw, 4.5rem);
   line-height: 1.2;
-  color: var(--text);
+  color: #c3a1df;
   background: rgb(33 19 47 / 85%);
 }
 
 .member .video-excerpt + .video-excerpt { margin-top: 1.5rem; }
 
 .featured-videos + .section-intro { margin-top: 2rem; margin-bottom: 0; }
+
+/* Measure the centered title while individual characters change. */
+.title-stage { display: block; position: relative; height: 1.2em; }
+.title-letter { position: absolute; left: 0; top: 0; white-space: pre; }
+.title-ruler { position: absolute; left: 50%; transform: translateX(-50%); top: 0; white-space: pre; visibility: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .title-ready .title-letter { transition: none; }
+}
