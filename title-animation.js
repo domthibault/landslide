@@ -2,7 +2,7 @@
   const title = document.querySelector('#project-title');
   if (!title || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const phrases = ['Playful Data', 'Play Dataful', 'Fuldata Play', 'A Fat Duly Pal', 'A Fully Adapt', 'Play Data Flu', 'Daftly, Paula'];
+  const phrases = ['Playful Data', 'Play Dataful', 'Data Fulplay', 'A Fat Duly Pal', 'Fully adapt a ...', '🌴 Dat Playa Flu 🌴', 'Daftly, Paula'];
   const signature = text => [...text.toLowerCase()].filter(c => /[a-z]/.test(c)).sort().join('');
   if (!phrases.every(text => signature(text) === signature(phrases[0]))) return;
 
@@ -22,7 +22,7 @@
   let current = 0;
   let alternate = 1;
   let timer;
-  let remaining = 7000;
+  let remaining = 6000;
   let deadline;
   let reduced = false;
 
@@ -141,7 +141,7 @@
         alternate = alternate % (phrases.length - 1) + 1;
       } else current = 0;
       layout(true);
-      remaining = current === 0 ? 7000 : 3500;
+      remaining = current === 0 ? 15000 : 3500;
       schedule();
     }, remaining);
   }
@@ -167,7 +167,7 @@
       layout();
     } else {
       stage.classList.add('title-ready');
-      remaining = 7000;
+      remaining = 15000;
       schedule();
     }
   });
