@@ -69,3 +69,5 @@ footer > a:last-child { font-size: .8rem; }
   color: var(--text);
   background: rgb(33 19 47 / 85%);
 }
+
+.member .video-excerpt + .video-excerpt { margin-top: 1.5rem; }
