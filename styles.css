@@ -57,7 +57,6 @@ h1 { font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1.1; font-weight: 400; le
 .video-placeholder { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 1rem; text-align: center; }
 .video-placeholder span { font-size: 1.1rem; }
 .video-placeholder p { color: var(--muted); font-size: .8rem; margin: .5rem 0 0; }
-figcaption { color: var(--muted); font-size: .85rem; margin-top: .8rem; }
 .members { border-top: 1px solid var(--line); }
 .section-heading h2 { font-size: 2rem; font-weight: 400; margin-bottom: 2rem; }
 .member-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
@@ -106,3 +105,9 @@ footer > a:last-child { font-size: .8rem; }
 @media (prefers-reduced-motion: reduce) {
   .title-ready .title-letter { transition: none; }
 }
+
+.performance-documentation { margin: 1.5rem 0 0; font-size: 1.15rem; line-height: 1.6; }
+.performance-documentation a:hover { color: var(--accent); }
+
+.featured > .section-intro, .featured > .performance-documentation { max-width: none; }
+.featured > .section-intro { margin-top: 1.5rem; margin-bottom: 0; }
