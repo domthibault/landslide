@@ -2,8 +2,8 @@
   const title = document.querySelector('#project-title');
   if (!title || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  const phrases = ['Playful Data', 'Play Dataful', 'Fuldata Play', 'A Fat Duly Pal', 'A Fully Adapt'];
-  const signature = text => [...text.toLowerCase()].filter(c => c !== ' ').sort().join('');
+  const phrases = ['Playful Data', 'Play Dataful', 'Fuldata Play', 'A Fat Duly Pal', 'A Fully Adapt', 'Play Data Flu', 'Daftly, Paula'];
+  const signature = text => [...text.toLowerCase()].filter(c => /[a-z]/.test(c)).sort().join('');
   if (!phrases.every(text => signature(text) === signature(phrases[0]))) return;
 
   title.setAttribute('aria-label', phrases[0]);
@@ -38,6 +38,7 @@
   function layout(animate = false) {
     clearInterval(characterTimer);
     finishCharacters();
+    stage.querySelectorAll('.title-punctuation').forEach(element => element.remove());
     const mode = animate ? activeModes[transition++ % activeModes.length] : -1;
     const grouped = mode === 0;
     // Cycle: left → right, right → left, center → edges, edges → center.
@@ -57,6 +58,14 @@
     for (const span of ruler.children) {
       const char = span.textContent;
       if (char === ' ') continue;
+      if (!/[a-z]/i.test(char)) {
+        const punctuation = document.createElement('span');
+        punctuation.className = 'title-letter title-punctuation';
+        punctuation.textContent = char;
+        punctuation.style.transform = `translate(${span.getBoundingClientRect().left - bounds.left}px, 0)`;
+        stage.append(punctuation);
+        continue;
+      }
       const index = available.findIndex(letter => letter.key === char.toLowerCase());
       const { element } = available.splice(index, 1)[0];
       const rect = span.getBoundingClientRect();
