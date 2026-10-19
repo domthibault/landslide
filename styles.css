@@ -111,3 +111,8 @@ footer > a:last-child { font-size: .8rem; }
 
 .featured > .section-intro, .featured > .performance-documentation { max-width: none; }
 .featured > .section-intro { margin-top: 1.5rem; margin-bottom: 0; }
+
+.bandcamp-excerpt + .bandcamp-excerpt { margin-top: 1.5rem; }
+.bandcamp-player { display: block; width: 100%; border: 0; }
+.bandcamp-album { aspect-ratio: 1; }
+.bandcamp-track { aspect-ratio: 350 / 442; }
